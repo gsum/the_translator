@@ -1,4 +1,5 @@
 espeak
 lame
+pulseaudio
 libpulse-dev
 libpulse0
