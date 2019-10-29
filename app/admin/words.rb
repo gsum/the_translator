@@ -5,7 +5,7 @@ ActiveAdmin.register Word do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :word, :meaning, :phase
+  permit_params :word, :meaning, :phase
   #
   # or
   #
@@ -14,5 +14,5 @@ ActiveAdmin.register Word do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+
 end
