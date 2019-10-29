@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-require 'espeak'
+require 'tts'
   def index
     phase = DisplayPhase.first || 1
     @words = Word.where(phase: phase)
@@ -7,8 +7,7 @@ require 'espeak'
 
   def show
     word = Word.find(params[:id])
-    speech = ESpeak::Speech.new(word.word)
-    speech.speak
+    word.word.play("en")
     redirect_to pages_path
   end
 end

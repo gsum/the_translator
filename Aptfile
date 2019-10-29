@@ -1,5 +1,1 @@
-espeak
-lame
-pulseaudio
-libpulse-dev
-libpulse0
+mpg123
