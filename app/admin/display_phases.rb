@@ -5,7 +5,7 @@ ActiveAdmin.register DisplayPhase do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :active_phase
+  permit_params :active_phase
   #
   # or
   #
@@ -14,5 +14,5 @@ ActiveAdmin.register DisplayPhase do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+
 end
