@@ -1,0 +1,2 @@
+class DisplayPhase < ApplicationRecord
+end
