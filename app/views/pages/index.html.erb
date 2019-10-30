@@ -10,10 +10,16 @@
         <% @words.each do |word| %>
           <tr>
             <td><%= word.word %></td>
-            <td><%= link_to "Speak", page_path(word) %></td>
+            <td><%= link_to "speak", "#", onclick: "talk('#{word.word}')" %></td>
             <td><%= word.meaning %></td>
           </tr>
         <% end %>
       </table>
   </div>
 </div>
+<script type="text/javascript">
+  function talk(word){
+    var msg = new SpeechSynthesisUtterance(word);
+    window.speechSynthesis.speak(msg);
+  }
+</script>
