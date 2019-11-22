@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_29_012202) do
+ActiveRecord::Schema.define(version: 2019_11_22_014850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,30 @@ ActiveRecord::Schema.define(version: 2019_10_29_012202) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "options", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.string "option"
+    t.boolean "right_answer"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_options_on_question_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "sumbissions", force: :cascade do |t|
+    t.bigint "question_id", null: false
+    t.bigint "option_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["option_id"], name: "index_sumbissions_on_option_id"
+    t.index ["question_id"], name: "index_sumbissions_on_question_id"
+  end
+
   create_table "words", force: :cascade do |t|
     t.string "word"
     t.string "meaning"
@@ -55,4 +79,7 @@ ActiveRecord::Schema.define(version: 2019_10_29_012202) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "options", "questions"
+  add_foreign_key "sumbissions", "options"
+  add_foreign_key "sumbissions", "questions"
 end
