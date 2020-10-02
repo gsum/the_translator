@@ -1,24 +1,18 @@
-# README
+# The Translator App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I made this app for my mom to learn Nepali to English words.
 
-Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.6.5
 
-* System dependencies
+* Database Postgres
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* idl
+ ### To run this app on locala
+ 
+ 1. Clone the app `git clone <this app url>`
+ 
+ 2. Go to the the app directory and run bundle install `bundle install`
+ 
+ 3. Create the database `rails db:create`
+ 
+ 4. Then fire up the server `rails s`
